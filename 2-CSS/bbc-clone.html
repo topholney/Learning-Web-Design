@@ -6,13 +6,14 @@
 				
 		<style type="text/css">
 			#topbar {
-				width:1000px;
+				width:1200px;
 				margin:0 auto;
 				height:40px;
 			}
 			body {
 				margin:0;
 				padding:0;
+				font-family: Helvetica, Arial, sans-serif;
 			}
 			#logo {
 				margin-top:8px;
@@ -26,9 +27,134 @@
 				border-left:1px #CCCCCC solid;
 				height:100%;
 			}
-			#login-icon {
+			#signin-image {
 				width:25px;
 				margin:10px 15px;
+				float:left;
+			}
+			#signin-text {
+				font-weight: bold;
+				font-size: 90%;
+				position:relative;
+				top:11px;
+				padding-right:50px;
+			}
+			#wigglyline{
+				float:left;
+				height:40px;
+			}
+			#bell{
+				height: 25px;
+				margin: 9px 8px 0 8px;
+			}
+			#bell-div{
+				float:left;
+			}
+			.topbar-menu{
+				font-weight: bold;
+				font-size:90%;
+				padding: 13px 15px 0 15px;
+				height:27px;
+			}
+			#more-arrow {
+				width:16px;
+				margin-left:20px;
+			}
+			#search-box {
+				background-color: #E4E4E4;
+				border: none;
+				font-weight: bold;
+				font-size: 14px;
+				padding: 5px;
+				margin:5px 0 5px 5px;
+				float: left;
+			}
+			#magnifying-glass{
+				height: 26px;
+				margin-top: 5px;
+			}
+			.clear{
+				clear:both;
+			}
+			#menu-bar-container {
+				border-top: 1px solid #CCCCCC;
+				background-color: #BD150D;
+				width:100%;
+				height: 70px;
+			}#menu-bar {
+				background-color: #BD150D;
+				width:1200px;
+				margin: 0 auto;
+			}
+			h1 {
+				padding:0;
+				margin:0;
+				color:white;
+				font-size: 40px;
+				font-weight: normal;
+				padding-top:10px;
+				float:left;
+			}
+			#local-news{
+				float:right;
+				border: 1px #BB4545 solid;
+				width:250px;
+				padding: 5px 5px 0 10px;
+				margin: 5px 10px 0 0;
+
+			}
+			#local-news a {
+				color:white;
+				text-decoration: none;
+				font-size:30px;
+				position:relative;
+				top:-8px;
+			}
+			#local-news a:hover {
+				text-decoration: underline;
+			}
+			#local-news img{
+				height:40px;
+			}
+			#menu-bar-2-container{
+				background-color: #A01C26;
+				width:100%;
+			}
+			#menu-bar-2{
+				width:1200px;
+				margin:0 auto;
+				height:40px;
+			}
+			#menu-bar-2 a{
+				color:white;
+				text-decoration: none;
+				margin-top: 5px;
+				padding: 0 10px;
+				border-right: 1px solid #BB4545;
+				font-size:14px;
+				position:relative;
+				top: 10px;
+				right:10px;
+			}
+			#menu-bar-2 a:hover{
+				text-decoration: underline;
+			}
+			.no-border {
+				border:none !important;
+			}
+			#down-arrow{
+				height:10px;
+				position:relative;
+				top:10px;
+			}
+			#page-container{
+				width:1200px;
+				margin: 0 auto;	
+			}
+			h2{
+				font-weight:normal;
+				margin-top:10px;
+				font-size:20px;
 			}
 		</style>
 	
@@ -37,9 +163,76 @@
 	<body>
 		<div id="topbar">
 			<img id="logo" src="images/bbc-blocks-dark.png">
-			<div id="signing-div" class="topbar-section">
-				<img id="login-icon" src="images/login-icon.png">
+			<div id="signin-div" class="topbar-section">
+				<img id="signin-image" src="images/signin-image.png">
+				<span id="signin-text">Sign in</span>
+			</div>
+			<div id="bell-div">
+				<img id="wigglyline" src="images/wigglyline.png">
+				<img id="bell" src="images/bell.png">
+			</div>
+			<div class="topbar-section topbar-menu">
+				News
+			</div>
+			<div class="topbar-section topbar-menu">
+				Sport
+			</div>
+			<div class="topbar-section topbar-menu">
+				Weather
+			</div>
+			<div class="topbar-section topbar-menu">
+				iPlayer
+			</div>
+			<div class="topbar-section topbar-menu">
+				TV
+			</div>
+			<div class="topbar-section topbar-menu">
+				Radio
+			</div>
+			<div class="topbar-section topbar-menu">
+				More
+				<img id="more-arrow" src="images/more-arrow.png">
+			</div>
+			<div class="topbar-section">
+				<input id="search-box" type="text" value="Search">
+				<input type="image" id="magnifying-glass" src="images/magnifying-glass.PNG">
 			</div>
 		</div>
+
+		<div class="clear"></div>
+		<div id="menu-bar-container">
+			<div id="menu-bar">
+				<h1>NEWS</h1>
+				<div id="local-news">
+					<a href ="">Find local news</a>
+					<img src="images/pointer.png">
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+		<div id="menu-bar-2-container">
+			<div id="menu-bar-2">
+				<a href="">Home</a>
+				<a href="">UK</a>
+				<a href="">World</a>
+				<a href="">Business</a>
+				<a href="">Politics</a>
+				<a href="">Tech</a>
+				<a href="">Science</a>
+				<a href="">Health</a>
+				<a href="">Education</a>
+				<a href="">Entertainment & Arts</a>
+				<a href="">Video & Audio</a>
+				<a href="" class="no-border">More</a>
+				<img id="down-arrow" src="images/down-arrow.png">
+			</div>
+		</div>
+		<div class="clear"></div>
+		<div id="page-container">
+			<div id="main-article">
+				<h2>Technology</h2>
+			</div>
+		</div>
+		
 	</body>
 </html>
