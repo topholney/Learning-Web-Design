@@ -8,15 +8,13 @@
 
 	<body>
 		<p id="text">Hello World</p>
+		<button id="my-button">Change text</button>
 
 		<script type="text/Javascript">
-
-			//This is a one line comment
-			/*
-				This is a multi-line comment
-			*/
-
-			document.getElementById("text").innerHTML = "Hello Toph";
+			document.getElementById("my-button").onclick = function() {
+				document.getElementById("text").innerHTML = "Hello Toph";
+			}
+			
 		</script>
 	</body>
 </html>
