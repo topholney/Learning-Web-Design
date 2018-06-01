@@ -11,16 +11,26 @@
 	</head>
 
 	<body>
-		<input type="text" id="input1">
-		<button id="button1">Change the text</button>
-		<p id="text1">This is some text</p>
+	
+		<p>What is the magic word?</p>
+		<input type="text" id="userInput">
+		<button id="button1">Check</button>
 
 		<script type="text/Javascript">
 		
+			var x = "Test";
+			console.log(x);
+			
 			document.getElementById("button1").onclick = function () {
-				var x = document.getElementById("input1").value;
-				document.getElementById("text1").innerHTML = x;
+			x = document.getElementById("userInput").value;
+			console.log(x);
+			if (x == "Javascript"){
+				alert("You are correct");
+			} else {
+				alert("You are wrong");
 			}
+			}
+
 		</script>
 
 	</body>
