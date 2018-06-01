@@ -12,19 +12,20 @@
 
 	<body>
 	
-		<p>What is the magic word?</p>
-		<input type="text" id="userInput">
-		<button id="button1">Check</button>
+		<p>How many fingers am I holding up?</p>
+		<input type="number" id="userInput">
+		<button id="button1">Guess</button>
 
 		<script type="text/Javascript">
 		
-			var x = "Test";
+			var x = 0;
+			var randomNumber = Math.floor(Math.random() * 6);
 			console.log(x);
 			
 			document.getElementById("button1").onclick = function () {
 			x = document.getElementById("userInput").value;
 			console.log(x);
-			if (x == "Javascript"){
+			if (x == randomNumber){
 				alert("You are correct");
 			} else {
 				alert("You are wrong");
