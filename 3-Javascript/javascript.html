@@ -3,19 +3,25 @@
 	<head>
 	
 		<title>Javascript</title>
+
+		<style>
+			
+		</style>
 		
 	</head>
 
 	<body>
-		<p id="text">Hello World</p>
-		<button id="my-button">Change text</button>
+		<input type="text" id="input1">
+		<button id="button1">Change the text</button>
+		<p id="text1">This is some text</p>
 
 		<script type="text/Javascript">
-			document.getElementById("my-button").onclick = function() {
-				document.getElementById("text").innerHTML = "Hello Toph";
-				//test
+		
+			document.getElementById("button1").onclick = function () {
+				var x = document.getElementById("input1").value;
+				document.getElementById("text1").innerHTML = x;
 			}
-			
 		</script>
+
 	</body>
 </html>
