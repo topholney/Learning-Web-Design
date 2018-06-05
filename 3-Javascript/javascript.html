@@ -4,14 +4,112 @@
 	
 		<title>Javascript</title>
 
-		<style></style>
+		<style type="text/css">
+			#shapeSpace{
+				width: 80vw;
+				background-color: none;
+				height: 80vh;
+			}
+			#randomShape{
+				max-width: 400px;
+				max-height: 400px;
+				width: 100px;
+				height: 100px;
+			}
+		</style>
 		
 	</head>
 
 	<body>
 
+		<h1>Test Your Reactions!</h1>
+		<p>Click on the boxes and circles as quickly as you can!</p>
+		<h2>Your time: <span id="insertTime"></span>s</h2>
+		<div id="shapeSpace">
+			<div id="randomShape"></div>
+		</div>
+
 		<script type="text/Javascript">
-		
+			var startDate = new Date();
+			var startTime = startDate.getTime();
+			console.log(startTime);
+
+			function getRandomColor(){
+				var letters = '0123456789ABCDEF';
+				var color = '#';
+				for (var i = 0; i < 6; i++){
+					color += letters[Math.floor(Math.random() * 16)];
+				}
+				console.log(color);
+				return color;
+			}
+			function setRandomColor(elementID){
+				document.getElementById(elementID).style.backgroundColor = getRandomColor();
+			}
+			function setMinHeight(elementID, minH){
+				document.getElementById(elementID).style.minHeight = minH + "px";
+			}
+			function setMinWidth(elementID, minW){
+				document.getElementById(elementID).style.minWidth = minW + "px";
+			}
+			function getRandomSize(elementID){
+				var random_Shape = document.getElementById(elementID);
+				var min_Height = random_Shape.style.minHeight.replace(/[^-\d\.]/g, '');
+				var min_Width = random_Shape.style.minWidth.replace(/[^-\d\.]/g, '');
+				console.log(min_Height);
+				console.log(min_Width);
+				if (min_Height < min_Width){
+					var size = Math.floor((Math.random() * 400) + min_Height);
+					console.log("minHeight is "+ min_Height);
+					console.log("size is "+ size);
+					return size;
+				}
+				else{
+					var size = Math.floor((Math.random() * 400) + min_Width);
+					console.log("minWidth is "+ min_Width);
+					console.log("size is "+ size);
+					return size;
+				}
+				
+				
+			}
+			function setRandomSize(elementID){
+				var size = getRandomSize(elementID);
+				document.getElementById(elementID).style.height = size +"px";
+				document.getElementById(elementID).style.width = size +"px";
+			}
+			function getCircleOrSquare(){
+				var isCircle = false;
+				var shapeSelector = Math.floor(Math.random()*2);
+				if (shapeSelector == 1){
+					isCircle = true;
+					return "50%";
+				}
+				else {
+					isCircle = false;
+					return "0%";
+				}
+			}
+			function setCircleOrSquare(elementID){
+
+				document.getElementById(elementID).style.borderRadius = getCircleOrSquare();
+				console.log("border radius is " + document.getElementById(elementID).style.borderRadius);
+			}
+			function createShape() {
+				setMinHeight("randomShape",10);
+				setMinWidth("randomShape",10);
+				setRandomColor("randomShape");
+				setRandomSize("randomShape");
+				setCircleOrSquare("randomShape");
+				
+			}
+			setTimeout(createShape,1);
+			var elapsedDate = new Date()
+			console.log(elapsedDate.getTime());
+			var elapsedTime = elapsedDate.getTime() - startTime;
+			console.log(elapsedTime);
+			elapsedTime = elapsedTime / 1000;
+			document.getElementById("insertTime").innerHTML = elapsedTime;
 		</script>
 
 	</body>
