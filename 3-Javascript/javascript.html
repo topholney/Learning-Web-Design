@@ -14,11 +14,6 @@
 
 		#randomShape {
 			position:relative;
-			/*max-width: 400px;
-				max-height: 400px;
-				width: 100px;
-				height: 100px;
-				*/
 		}
 	</style>
 
@@ -35,10 +30,11 @@
 	</div>
 
 	<script type="text/Javascript">
+			//variables
 			var startDate = new Date();
 			var startTime = startDate.getTime();
 			console.log(startTime);
-
+			//functions
 			function getRandomColor(){
 				var letters = '0123456789ABCDEF';
 				var color = '#';
@@ -50,6 +46,30 @@
 			}
 			function setRandomColor(elementID){
 				document.getElementById(elementID).style.backgroundColor = getRandomColor();
+			}
+			function getRandomSize(elementID){
+				var random_Shape = document.getElementById(elementID);
+				var min_Height = parseInt(random_Shape.style.minHeight);//.replace(/[^-\d\.]/g, '');
+				var min_Width = parseInt(random_Shape.style.minWidth)//.replace(/[^-\d\.]/g, '');
+				var max_Height = parseInt(random_Shape.style.maxHeight);//.replace(/[^-\d\.]/g, '');
+				var max_Width = parseInt(random_Shape.style.maxWidth)//.replace(/[^-\d\.]/g, '');
+				if (min_Height < min_Width){
+					var size = Math.floor((Math.random() * (max_Height - min_Height) + min_Height));
+					console.log("minHeight is "+ min_Height);
+					console.log("size is "+ size);
+					return size;
+				}
+				else{
+					var size = Math.floor((Math.random() * (max_Width- min_Width) + min_Width));
+					console.log("minWidth is "+ min_Width);
+					console.log("size is "+ size);
+					return size;
+				}
+			}
+			function setRandomSize(elementID){
+				var size = getRandomSize(elementID);
+				document.getElementById(elementID).style.height = size +"px";
+				document.getElementById(elementID).style.width = size +"px";
 			}
 			function setMinHeight(elementID, minH){
 				document.getElementById(elementID).style.minHeight = minH + "px";
@@ -63,35 +83,11 @@
 			function setMaxWidth(elementID, maxW){
 				document.getElementById(elementID).style.maxWidth = maxW + "px";
 			}
-			function getRandomSize(elementID){
-				var random_Shape = document.getElementById(elementID);
-				var min_Height = parseInt(random_Shape.style.minHeight);//.replace(/[^-\d\.]/g, '');
-				var min_Width = parseInt(random_Shape.style.minWidth)//.replace(/[^-\d\.]/g, '');
-				var max_Height = parseInt(random_Shape.style.maxHeight);//.replace(/[^-\d\.]/g, '');
-				var max_Width = parseInt(random_Shape.style.maxWidth)//.replace(/[^-\d\.]/g, '');
-				console.log(min_Height);
-				console.log(min_Width);
-				console.log(max_Height);
-				console.log(max_Width);
-				if (min_Height < min_Width){
-					var size = Math.floor((Math.random() * (max_Height - min_Height) + min_Height));
-					console.log("minHeight is "+ min_Height);
-					console.log("size is "+ size);
-					return size;
-				}
-				else{
-					var size = Math.floor((Math.random() * (max_Width- min_Width) + min_Width));
-					console.log("minWidth is "+ min_Width);
-					console.log("size is "+ size);
-					return size;
-				}
-				
-				
+			function setHeight(elementID, h){
+				document.getElementById(elementID).style.height = h + "vh";
 			}
-			function setRandomSize(elementID){
-				var size = getRandomSize(elementID);
-				document.getElementById(elementID).style.height = size +"px";
-				document.getElementById(elementID).style.width = size +"px";
+			function setWidth(elementID, w){
+				document.getElementById(elementID).style.width = w + "vh";
 			}
 			function getCircleOrSquare(){
 				var isCircle = false;
@@ -110,18 +106,37 @@
 				document.getElementById(elementID).style.borderRadius = getCircleOrSquare();
 				console.log("border radius is " + document.getElementById(elementID).style.borderRadius);
 			}
+			//Takes an element and sets its left and top value relative to a random number between 0 and the viewport-height/width
+			function setRandomPosition(elementID, areaID){
+				var random_Shape = document.getElementById(elementID);
+				var areaDiv = document.getElementById(areaID);
+				var shapeWidth = parseInt(random_Shape.style.width);
+				var shapeHeight = parseInt(random_Shape.style.height);
+				var spaceWidth = parseInt(areaDiv.style.width);
+				var spaceHeight = parseInt(areaDiv.style.height);
+				random_Shape.style.position = "relative";
+				random_Shape.style.left = Math.floor(Math.random()*(spaceWidth+shapeWidth)) + "px";
+				random_Shape.style.top = Math.floor(Math.random()*(spaceHeight+shapeHeight)) + "px";
+				console.log(areaDiv);
+				console.log(spaceWidth);
+				console.log(shapeWidth);
+				console.log(parseInt(random_Shape.style.left));
+				console.log(parseInt(random_Shape.style.top));
+			}
 			function createShape() {
 				setMinHeight("randomShape",10);
 				setMinWidth("randomShape",10);
 				setMaxHeight("randomShape",200);
 				setMaxWidth("randomShape",200);
+				setHeight("shapeSpace", 80);
+				setWidth("shapeSpace", 80);
 				setRandomColor("randomShape");
 				setRandomSize("randomShape");
 				setCircleOrSquare("randomShape");
-				
+				setRandomPosition("randomShape", "shapeSpace");
 			}
-			setTimeout(createShape,1);
-			var elapsedDate = new Date()
+			setTimeout(createShape,1000);
+			var elapsedDate = new Date();
 			console.log(elapsedDate.getTime());
 			var elapsedTime = elapsedDate.getTime() - startTime;
 			console.log(elapsedTime);
