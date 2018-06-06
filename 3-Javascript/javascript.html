@@ -11,10 +11,11 @@
 				height: 80vh;
 			}
 			#randomShape{
-				max-width: 400px;
+				/*max-width: 400px;
 				max-height: 400px;
 				width: 100px;
 				height: 100px;
+				*/
 			}
 		</style>
 		
@@ -52,20 +53,30 @@
 			function setMinWidth(elementID, minW){
 				document.getElementById(elementID).style.minWidth = minW + "px";
 			}
+			function setMaxHeight(elementID, maxH){
+				document.getElementById(elementID).style.maxHeight = maxH + "px";
+			}
+			function setMaxWidth(elementID, maxW){
+				document.getElementById(elementID).style.maxWidth = maxW + "px";
+			}
 			function getRandomSize(elementID){
 				var random_Shape = document.getElementById(elementID);
-				var min_Height = random_Shape.style.minHeight.replace(/[^-\d\.]/g, '');
-				var min_Width = random_Shape.style.minWidth.replace(/[^-\d\.]/g, '');
+				var min_Height = parseInt(random_Shape.style.minHeight);//.replace(/[^-\d\.]/g, '');
+				var min_Width = parseInt(random_Shape.style.minWidth)//.replace(/[^-\d\.]/g, '');
+				var max_Height = parseInt(random_Shape.style.maxHeight);//.replace(/[^-\d\.]/g, '');
+				var max_Width = parseInt(random_Shape.style.maxWidth)//.replace(/[^-\d\.]/g, '');
 				console.log(min_Height);
 				console.log(min_Width);
+				console.log(max_Height);
+				console.log(max_Width);
 				if (min_Height < min_Width){
-					var size = Math.floor((Math.random() * 400) + min_Height);
+					var size = Math.floor((Math.random() * (max_Height - min_Height) + min_Height));
 					console.log("minHeight is "+ min_Height);
 					console.log("size is "+ size);
 					return size;
 				}
 				else{
-					var size = Math.floor((Math.random() * 400) + min_Width);
+					var size = Math.floor((Math.random() * (max_Width- min_Width) + min_Width));
 					console.log("minWidth is "+ min_Width);
 					console.log("size is "+ size);
 					return size;
@@ -98,6 +109,8 @@
 			function createShape() {
 				setMinHeight("randomShape",10);
 				setMinWidth("randomShape",10);
+				setMaxHeight("randomShape",200);
+				setMaxWidth("randomShape",200);
 				setRandomColor("randomShape");
 				setRandomSize("randomShape");
 				setCircleOrSquare("randomShape");
