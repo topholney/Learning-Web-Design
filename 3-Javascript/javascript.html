@@ -1,36 +1,42 @@
 <!doctype html>
-<html>
-	<head>
-	
-		<title>Javascript</title>
+<html lang="en-US">
 
-		<style type="text/css">
-			#shapeSpace{
-				width: 80vw;
-				background-color: none;
-				height: 80vh;
-			}
-			#randomShape{
-				/*max-width: 400px;
+</html>
+<html>
+
+<head>
+
+	<title>Javascript</title>
+
+	<style type="text/css">
+		#shapeSpace {
+			width: 80vw;
+			background-color: none;
+			height: 80vh;
+		}
+
+		#randomShape {
+			/*max-width: 400px;
 				max-height: 400px;
 				width: 100px;
 				height: 100px;
 				*/
-			}
-		</style>
-		
-	</head>
+		}
+	</style>
 
-	<body>
+</head>
 
-		<h1>Test Your Reactions!</h1>
-		<p>Click on the boxes and circles as quickly as you can!</p>
-		<h2>Your time: <span id="insertTime"></span>s</h2>
-		<div id="shapeSpace">
-			<div id="randomShape"></div>
-		</div>
+<body>
 
-		<script type="text/Javascript">
+	<h1>Test Your Reactions!</h1>
+	<p>Click on the boxes and circles as quickly as you can!</p>
+	<h2>Your time:
+		<span id="insertTime"></span>s</h2>
+	<div id="shapeSpace">
+		<div id="randomShape"></div>
+	</div>
+
+	<script type="text/Javascript">
 			var startDate = new Date();
 			var startTime = startDate.getTime();
 			console.log(startTime);
@@ -125,5 +131,6 @@
 			document.getElementById("insertTime").innerHTML = elapsedTime;
 		</script>
 
-	</body>
+</body>
+
 </html>
