@@ -87,7 +87,7 @@
 				document.getElementById(elementID).style.height = h + "vh";
 			}
 			function setWidth(elementID, w){
-				document.getElementById(elementID).style.width = w + "vh";
+				document.getElementById(elementID).style.width = w + "vw";
 			}
 			function getCircleOrSquare(){
 				var isCircle = false;
@@ -112,14 +112,16 @@
 				var areaDiv = document.getElementById(areaID);
 				var shapeWidth = parseInt(random_Shape.style.width);
 				var shapeHeight = parseInt(random_Shape.style.height);
-				var spaceWidth = parseInt(areaDiv.style.width);
-				var spaceHeight = parseInt(areaDiv.style.height);
+				var spaceWidth = parseInt(window.getComputedStyle(areaDiv,null).getPropertyValue("width"));
+				var spaceHeight = parseInt(window.getComputedStyle(areaDiv,null).getPropertyValue("height"));
 				random_Shape.style.position = "relative";
-				random_Shape.style.left = Math.floor(Math.random()*(spaceWidth+shapeWidth)) + "px";
-				random_Shape.style.top = Math.floor(Math.random()*(spaceHeight+shapeHeight)) + "px";
+				random_Shape.style.left = Math.floor(Math.random()*(spaceWidth-shapeWidth)) + "px";
+				random_Shape.style.top = Math.floor(Math.random()*(spaceHeight-shapeHeight)) + "px";
 				console.log(areaDiv);
 				console.log(spaceWidth);
 				console.log(shapeWidth);
+				console.log(spaceHeight);
+				console.log(shapeHeight);
 				console.log(parseInt(random_Shape.style.left));
 				console.log(parseInt(random_Shape.style.top));
 			}
@@ -128,8 +130,8 @@
 				setMinWidth("randomShape",10);
 				setMaxHeight("randomShape",200);
 				setMaxWidth("randomShape",200);
-				setHeight("shapeSpace", 80);
-				setWidth("shapeSpace", 80);
+				setHeight("shapeSpace", 70);
+				setWidth("shapeSpace", 70);
 				setRandomColor("randomShape");
 				setRandomSize("randomShape");
 				setCircleOrSquare("randomShape");
