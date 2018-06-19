@@ -26,14 +26,13 @@
 	<h2>Your time:
 		<span id="insertTime"></span>s</h2>
 	<div id="shapeSpace">
-		<div id="randomShape"></div>
+		<div id="randomShape" onclick="createShape()"></div>
 	</div>
 
 	<script type="text/Javascript">
 			//variables
 			var startDate = new Date();
 			var startTime = startDate.getTime();
-			console.log(startTime);
 			//functions
 			function getRandomColor(){
 				var letters = '0123456789ABCDEF';
@@ -41,7 +40,6 @@
 				for (var i = 0; i < 6; i++){
 					color += letters[Math.floor(Math.random() * 16)];
 				}
-				console.log(color);
 				return color;
 			}
 			function setRandomColor(elementID){
@@ -55,14 +53,10 @@
 				var max_Width = parseInt(random_Shape.style.maxWidth)//.replace(/[^-\d\.]/g, '');
 				if (min_Height < min_Width){
 					var size = Math.floor((Math.random() * (max_Height - min_Height) + min_Height));
-					console.log("minHeight is "+ min_Height);
-					console.log("size is "+ size);
 					return size;
 				}
 				else{
 					var size = Math.floor((Math.random() * (max_Width- min_Width) + min_Width));
-					console.log("minWidth is "+ min_Width);
-					console.log("size is "+ size);
 					return size;
 				}
 			}
@@ -104,7 +98,6 @@
 			function setCircleOrSquare(elementID){
 
 				document.getElementById(elementID).style.borderRadius = getCircleOrSquare();
-				console.log("border radius is " + document.getElementById(elementID).style.borderRadius);
 			}
 			//Takes an element and sets its left and top value relative to a random number between 0 and the viewport-height/width
 			function setRandomPosition(elementID, areaID){
@@ -117,33 +110,50 @@
 				random_Shape.style.position = "relative";
 				random_Shape.style.left = Math.floor(Math.random()*(spaceWidth-shapeWidth)) + "px";
 				random_Shape.style.top = Math.floor(Math.random()*(spaceHeight-shapeHeight)) + "px";
-				console.log(areaDiv);
-				console.log(spaceWidth);
-				console.log(shapeWidth);
-				console.log(spaceHeight);
-				console.log(shapeHeight);
-				console.log(parseInt(random_Shape.style.left));
-				console.log(parseInt(random_Shape.style.top));
+			}
+			function getNewTime(){
+				var newDate = new Date();
+				var newTime = newDate.getTime();
+				return newTime;
+			}
+			function setStartTime(){
+				var newStartDate = new Date();
+				var newStartTime = newStartDate.getTime();
+				startTime = newStartTime;
+			}
+			function getStartTime(){
+				return startTime;
+			}
+			function sleep(milliseconds){
+  				var start = new Date().getTime();
+  				for (var i = 0; i < 1e7; i++) {
+    				if ((new Date().getTime() - start) > milliseconds){
+      				break;
+    				}
+  				}
 			}
 			function createShape() {
-				setMinHeight("randomShape",10);
-				setMinWidth("randomShape",10);
+				var startTime = getStartTime();
+				var newTime = getNewTime();
+				var reactionTime = newTime - startTime;
+				var randomWaitTime = Math.floor(Math.random()*3000);
+				reactionTime = reactionTime / 1000;
+				document.getElementById("insertTime").innerHTML = reactionTime;
+				sleep(randomWaitTime);
+				setMinHeight("randomShape",40);
+				setMinWidth("randomShape",40);
 				setMaxHeight("randomShape",200);
 				setMaxWidth("randomShape",200);
-				setHeight("shapeSpace", 70);
-				setWidth("shapeSpace", 70);
 				setRandomColor("randomShape");
 				setRandomSize("randomShape");
 				setCircleOrSquare("randomShape");
 				setRandomPosition("randomShape", "shapeSpace");
+				setStartTime();
 			}
-			setTimeout(createShape,1000);
-			var elapsedDate = new Date();
-			console.log(elapsedDate.getTime());
-			var elapsedTime = elapsedDate.getTime() - startTime;
-			console.log(elapsedTime);
-			elapsedTime = elapsedTime / 1000;
-			document.getElementById("insertTime").innerHTML = elapsedTime;
+			//main
+			setHeight("shapeSpace", 70);
+			setWidth("shapeSpace", 70);
+			setTimeout(function (){createShape();}, 1000);
 		</script>
 
 </body>
