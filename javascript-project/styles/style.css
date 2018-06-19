@@ -1,0 +1,9 @@
+#shapeSpace {
+    width: 80vw;
+    background-color: none;
+    height: 80vh;
+}
+
+#randomShape {
+    position:relative;
+}
