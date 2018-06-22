@@ -3,24 +3,40 @@
 
 <head>
 
-	<title>Javascript</title>
+	<title>Jquery</title>
 
-	<link rel="stylesheet" type="text/css" href="styles/style.css">
-	
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style type="text/css">
+		.green-circle{
+			background-color: green;
+			border-radius: 50%;
+			height: 200px;
+			width: 200px;
+			margin: 10px;
+		}
+		.red-square{
+			background-color: red;
+			height: 200px;
+			width: 200px;
+			margin: 10px;
+		}
+	</style>
 </head>
 
 <body>
 
-	<h1>Test Your Reactions!</h1>
-	<p>Click on the boxes and circles as quickly as you can!</p>
-	<h2>Your time:
-		<span id="insertTime"></span>s</h2>
-	<div id="shapeSpace">
-		<div id="randomShape" onclick="createShape()"></div>
-	</div>
-
-	<script type="text/javascript" src="scripts/script.js"></script>
-
+	Hi there
+	<div class="green-circle"></div>
+	<div class="red-square"></div>
+	<div></div>
+	<div class="red-square"></div>
+	<script type="text/javascript">
+		$("div").click(function() {
+			alert("div was clicked");
+		})
+		
+	</script>
+	
 </body>
 
 </html>
