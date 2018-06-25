@@ -25,14 +25,14 @@
 
 <body>
 
-	Hi there
 	<div class="green-circle"></div>
 	<div class="red-square"></div>
-	<div></div>
 	<div class="red-square"></div>
+	
 	<script type="text/javascript">
 		$("div").click(function() {
-			alert("div was clicked");
+
+			alert("You clicked on a "+$(this).attr("class"));
 		})
 		
 	</script>
