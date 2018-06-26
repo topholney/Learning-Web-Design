@@ -7,33 +7,31 @@
 
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<style type="text/css">
-		.green-circle{
-			background-color: green;
-			border-radius: 50%;
-			height: 200px;
-			width: 200px;
-			margin: 10px;
-		}
-		.red-square{
-			background-color: red;
-			height: 200px;
-			width: 200px;
-			margin: 10px;
-		}
+		
 	</style>
 </head>
 
 <body>
-
-	<div class="green-circle"></div>
-	<div class="red-square"></div>
-	<div class="red-square"></div>
+	<p id="toggle-text">This is some toggle text</p>
+	<button id="toggle-button">Toggle Text</button>
 	
-	<script type="text/javascript">
-		$("div").click(function() {
 
-			alert("You clicked on a "+$(this).attr("class"));
-		})
+	<script type="text/javascript">
+		var textShowing = true;
+		$("#toggle-button").click(function(){
+			if(textShowing){
+				$("#toggle-text").fadeOut(function(){
+					textShowing = false;
+				});
+				
+			} else {
+				$("#toggle-text").fadeIn(function(){
+					textShowing = true;
+				});
+				
+			}
+		});
+		
 		
 	</script>
 	
