@@ -7,31 +7,32 @@
 
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<style type="text/css">
-		
+		#circle{
+			width: 150px;
+			height: 150px;
+			border-radius: 50%;
+			background-color: green;
+		}
 	</style>
 </head>
 
 <body>
-	<p id="toggle-text">This is some toggle text</p>
-	<button id="toggle-button">Toggle Text</button>
 	
+	<div id="circle"></div>
 
 	<script type="text/javascript">
-		var textShowing = true;
-		$("#toggle-button").click(function(){
-			if(textShowing){
-				$("#toggle-text").fadeOut(function(){
-					textShowing = false;
-				});
-				
-			} else {
-				$("#toggle-text").fadeIn(function(){
-					textShowing = true;
-				});
-				
-			}
-		});
 		
+		$("#circle").click(function(){
+			$(this).animate({
+				width:"400px", 
+				height:"400px",
+				marginLeft:"100px",
+				marginTop:"100px"
+
+				}, 2000, function(){
+					$(this).css("backgroundColor", "red");
+				});
+		})
 		
 	</script>
 	
