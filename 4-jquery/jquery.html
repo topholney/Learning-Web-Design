@@ -13,14 +13,16 @@
 	
 	<style>
 		body{
-			font-family:Arial, Helvetica, sans-serif
+			font-family:Arial, Helvetica, sans-serif;
+			display: flex;
+			width: 100%;
 		}
 		#top-bar{
-			background-color: lightgray;
+			background-color: #EDEDED;
 			height: 40px;
 			width: 100%;
 			position: relative;
-			
+		
 		}
 		#top-bar span{
 			font-size: 150%;
@@ -40,7 +42,7 @@
 		}
 		#button-container button{
 			float: left;
-			background-color: whitesmoke;
+			background-color: #E4E4E4;
 			border-width: 0px;
 		}
 		#button-container button:hover{
@@ -62,6 +64,22 @@
 			border-top-right-radius: 20%;
 			border-bottom-right-radius: 20%;
 		}
+		#windows-container{
+			background-color:lightcoral;
+			height: 100%;
+		}
+		#html-window{
+			background-color: red;
+		}
+		#css-window{
+			background-color: blue;
+		}
+		#javascript-window{
+			background-color: green;
+		}
+		#output-window{
+			background-color: yellow;
+		}
 	</style>
 
 	<script>
@@ -79,6 +97,12 @@
 			<button id="button-javascript">JavaScript</button>
 			<button id="button-output">Output</button>
 		</div>
+	</div>
+	<div id="windows-container">
+		<div id="html-window"></div>
+		<div id="css-window"></div>
+		<div id="javascript-window"></div>
+		<div id="output-window"></div>
 	</div>
 </body>
 
