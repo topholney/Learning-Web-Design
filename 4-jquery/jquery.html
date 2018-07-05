@@ -12,30 +12,74 @@
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 	
 	<style>
-			#sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
-			#sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
-			#sortable li span { position: absolute; margin-left: -1.3em; }
+		body{
+			font-family:Arial, Helvetica, sans-serif
+		}
+		#top-bar{
+			background-color: lightgray;
+			height: 40px;
+			width: 100%;
+			position: relative;
+			
+		}
+		#top-bar span{
+			font-size: 150%;
+			font-weight: bold;
+			margin: 0;
+			padding-left: 10px;
+    		position: absolute;
+    		top: 50%;
+    		transform: translate(0%, -50%);
+		}
+		#button-container{
+			margin: 0;
+    		position: absolute;
+    		top: 50%;
+			left: 50%;
+    		transform: translate(-50%, -50%);
+		}
+		#button-container button{
+			float: left;
+			background-color: whitesmoke;
+			border-width: 0px;
+		}
+		#button-container button:hover{
+			background-color: lightslategray;
+		}
+		#button-html{
+			border-top-left-radius: 20%;
+			border-bottom-left-radius: 20%;
+			border-right-width: 1px !important;
+
+		}
+		#button-css{
+			border-right-width: 1px !important;
+		}
+		#button-javascript{
+			border-right-width: 1px !important;
+		}
+		#button-output{
+			border-top-right-radius: 20%;
+			border-bottom-right-radius: 20%;
+		}
 	</style>
 
 	<script>
-		$( function() {
-    		$( "#sortable" ).sortable();
-    		$( "#sortable" ).disableSelection();
-  } );
+		
 	</script>
 
 </head>
 
 <body>
-		<ul id="sortable">
-				<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
-				<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
-				<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
-				<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
-				<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
-				<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
-				<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
-			  </ul>	
+	<div id="top-bar">
+		<span>CodePlayer</span>
+		<div id="button-container">
+			<button id="button-html">HTML</button>
+			<button id="button-css">CSS</button>
+			<button id="button-javascript">JavaScript</button>
+			<button id="button-output">Output</button>
+		</div>
+	</div>
 </body>
 
 </html>
