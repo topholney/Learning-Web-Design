@@ -46,7 +46,7 @@
 		#button-container button{
 			float: left;
 			background-color: #E4E4E4;
-			border-width: 0px;
+			border-width: 1px;
 			font-family: inherit;
 			font-size: 100%;
 		}
@@ -56,45 +56,47 @@
 		#button-html{
 			border-top-left-radius: 20%;
 			border-bottom-left-radius: 20%;
-			border-right-width: 1px !important;
+			border-color: red;
 
 		}
 		#button-css{
-			border-right-width: 1px !important;
+			border-color: blue;
 		}
 		#button-javascript{
-			border-right-width: 1px !important;
+			border-color: green;
 		}
 		#button-output{
 			border-top-right-radius: 20%;
 			border-bottom-right-radius: 20%;
+			border-color: yellow;
 		}
 		#windows-container{
-			background-color:lightcoral;
+			border-color:lightcoral;
 			height: 100%;
+			display: flex;
+			justify-content: center;
+			margin: 1px;
 		}
 		#windows-container div{
 			float: left;
 			height: 100%;
-			width: 25vw;
+			flex: 1 1 auto;
+			border-width: 1px;
+			border-style: solid;
 		}
 		#html-window{
-			background-color: red;
+			border-color: red;
 		}
 		#css-window{
-			background-color: blue;
+			border-color: blue;
 		}
 		#javascript-window{
-			background-color: green;
+			border-color: green;
 		}
 		#output-window{
-			background-color: yellow;
+			border-color: yellow;
 		}
 	</style>
-
-	<script>
-		
-	</script>
 
 </head>
 
@@ -114,6 +116,42 @@
 		<div id="javascript-window"></div>
 		<div id="output-window"></div>
 	</div>
+
+<script>
+	$("#button-html").click(function(){
+		var id = document.getElementById("html-window");
+		if (id.style.display == "none"){
+			id.style.display = "block";
+		} else {
+			id.style.display = "none";
+		}
+	});
+	$("#button-css").click(function(){
+		var id = document.getElementById("css-window");
+		if (id.style.display == "none"){
+			id.style.display = "block";
+		} else {
+			id.style.display = "none";
+		}
+	});
+	$("#button-javascript").click(function(){
+		var id = document.getElementById("javascript-window");
+		if (id.style.display == "none"){
+			id.style.display = "block";
+		} else {
+			id.style.display = "none";
+		}
+	});
+	$("#button-output").click(function(){
+		var id = document.getElementById("output-window");
+		if (id.style.display == "none"){
+			id.style.display = "block";
+		} else {
+			id.style.display = "none";
+		}
+	});
+</script>
+	
 </body>
 
 </html>
