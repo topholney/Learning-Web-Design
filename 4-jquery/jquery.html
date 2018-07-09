@@ -14,7 +14,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Galada" rel="stylesheet">
 	
 	<style>
-		body{
+		html, body{
 			font-family: 'Galada', cursive;
 			width: 100vw;
 			height: 100vh;
@@ -57,7 +57,6 @@
 			border-top-left-radius: 20%;
 			border-bottom-left-radius: 20%;
 			border-color: red;
-
 		}
 		#button-css{
 			border-color: blue;
@@ -71,18 +70,27 @@
 			border-color: yellow;
 		}
 		#windows-container{
-			border-color:lightcoral;
-			height: 100%;
+			height: calc(100% - 40px);
+			width: calc(100%);
 			display: flex;
 			justify-content: center;
-			margin: 1px;
 		}
 		#windows-container div{
 			float: left;
 			height: 100%;
-			flex: 1 1 auto;
+			width: 100%;
+			flex: 1 1 0;
 			border-width: 1px;
 			border-style: solid;
+			box-sizing: border-box;
+			overflow: hidden;
+		}
+		#windows-container div textarea{
+			height: 100%;
+			width: 100%;
+			box-sizing: border-box;
+			overflow: hidden;
+			resize: none;
 		}
 		#html-window{
 			border-color: red;
@@ -111,10 +119,18 @@
 		</div>
 	</div>
 	<div id="windows-container">
-		<div id="html-window"></div>
-		<div id="css-window"></div>
-		<div id="javascript-window"></div>
-		<div id="output-window"></div>
+		<div id="html-window">
+			<textarea></textarea>
+		</div>
+		<div id="css-window">
+			<textarea></textarea>
+		</div>
+		<div id="javascript-window">
+			<textarea></textarea>
+		</div>
+		<div id="output-window">
+			
+		</div>
 	</div>
 
 <script>
