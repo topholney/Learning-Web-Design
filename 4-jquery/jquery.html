@@ -104,6 +104,12 @@
 		#output-window{
 			border-color: yellow;
 		}
+		iframe{
+			height: 100%;
+			width: 100%;
+			border: none;
+		}
+		
 	</style>
 
 </head>
@@ -129,7 +135,7 @@
 			<textarea></textarea>
 		</div>
 		<div id="output-window">
-			
+			<iframe id="output-iframe"></iframe>
 		</div>
 	</div>
 
@@ -166,6 +172,7 @@
 			id.style.display = "none";
 		}
 	});
+	$("iframe").contents().find("html").html("My html");
 </script>
 	
 </body>
