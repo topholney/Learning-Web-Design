@@ -126,13 +126,15 @@
 	</div>
 	<div id="windows-container">
 		<div id="html-window">
-			<textarea></textarea>
+			<textarea id="html-textarea"><p id="paragraph">Hello World!</p></textarea>
 		</div>
 		<div id="css-window">
-			<textarea></textarea>
+			<textarea id="css-textarea">#paragraph{
+				color: blue;
+				}</textarea>
 		</div>
 		<div id="javascript-window">
-			<textarea></textarea>
+			<textarea id="javascript-textarea">document.getElementById("paragraph").innerHTML = "Hello Chris";</textarea>
 		</div>
 		<div id="output-window">
 			<iframe id="output-iframe"></iframe>
@@ -172,7 +174,13 @@
 			id.style.display = "none";
 		}
 	});
-	$("iframe").contents().find("html").html("My html");
+	
+	$("textarea").on("change keyup past", function(){
+		$("iframe").contents().find("html").html("<html><head><style type='text/css'>" + $("#css-textarea").val() + "</style></head><body>" + $("#html-textarea").val() + "</body></html>");
+
+		document.getElementById("output-iframe").contentWindow.eval($("#javascript-textarea").val());
+		
+	});
 </script>
 	
 </body>
