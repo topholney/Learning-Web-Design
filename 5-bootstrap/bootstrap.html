@@ -8,18 +8,12 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <style type="text/css">
-      .row {
-        justify-content: center;
-      }
-    </style>
-
     <title>My App</title>
     
   </head>
   <body>
-    <div class="container-fluid">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light row" id="topNavBar">
+    <!-- <div class="container-fluid"> -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light" id="topNavBar">
         <a class="navbar-brand" href="#">MyApp</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -44,33 +38,42 @@
           </form>
         </div>
       </nav>
-      <div id="home" class="row"style="background-image:url('https://images.unsplash.com/photo-1573641287741-f6e223d81a0f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80');">
-        <div class="col">
-          <div class="row">
-            <h1 class=>My Awesome App!</h1>
-          </div>
-          <div class="row">
-            <h5 class=>This is why YOU should download this fantastic app!</h5>
-          </div>          
-          <hr>
-          <div class="row">
-            <h6>Want to know more? Join our mailing list!</h6>
-          </div>
-          <div class="row">
-            <form class="form-inline">
-              <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
-              <div class="input-group mb-2 mr-sm-2">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">@</div>
-                </div>
-                <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Your email">
+      <div id="home" class="container-fluid" style="background-image:url('https://images.unsplash.com/photo-1573641287741-f6e223d81a0f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80');">
+        <div class="row justify-content-center">
+              <h1 class=>My Awesome App!</h1>
+        </div>
+        <div class="row justify-content-center">
+              <h5 class=>This is why YOU should download this fantastic app!</h5>
+        </div>
+        <hr>
+        <div class="row justify-content-center">
+              <h6>Want to know more? Join our mailing list!</h6>
+        </div>
+        <div class="row justify-content-center">
+          <form class="form-inline">
+            <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
+            <div class="input-group mb-2 mr-sm-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">@</div>
               </div>
-              <button type="submit" class="btn btn-primary mb-2">Sign up</button>
-            </form>
-          </div>
+              <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Your email">
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">Sign up</button>
+          </form>
         </div>
       </div>
-    </div>
+      <div id="about" class='container-fluid'>
+        <div class="row justify-content-center">
+          <h2>Why This App Is Awesome</h2>
+        </div>
+        <div class="row justify-content-center">
+          <h5>Summary, once again, of your app's awesomeness</h5>
+        </div>
+        <div class="row">
+          
+        </div>
+      </div>
+    <!-- </div> -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
