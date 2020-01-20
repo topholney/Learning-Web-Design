@@ -1,0 +1,25 @@
+{
+  "name": "learning-web-design",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/topholney/Learning-Web-Design.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/topholney/Learning-Web-Design/issues"
+  },
+  "homepage": "https://github.com/topholney/Learning-Web-Design#readme",
+  "dependencies": {
+    "moment": "^2.24.0"
+  }
+}
