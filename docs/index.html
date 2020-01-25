@@ -7,14 +7,13 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <!-- <script src="https://kit.fontawesome.com/e2cce91acc.js" crossorigin="anonymous"></script> -->
-    <link rel="stylesheet" href="C:\Users\Chris\OneDrive\Desktop\Learning-Web-Design\node_modules\@fortawesome\fontawesome-free\css\all.css">
+    <script src="https://kit.fontawesome.com/e2cce91acc.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="C:\Users\Chris\OneDrive\Desktop\Learning-Web-Design\node_modules\@fortawesome\fontawesome-free\css\all.css"> -->
     <title>Toph's App</title>
     
   </head>
-  <body>
-    <!-- <div class="container-fluid"> -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-light" id="topNavBar">
+  <body data-spy="scroll" data-target="#topNavBar" data-offset="0">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" id="topNavBar">
         <a class="navbar-brand" href="#">MyApp</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -23,13 +22,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="#about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Downolad The App</a>
+              <a class="nav-link" href="#download">Downolad The App</a>
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
@@ -39,7 +38,7 @@
           </form>
         </div>
       </nav>
-      <div id="home" class="container-fluid" style="background-image:url('https://images.unsplash.com/photo-1573641287741-f6e223d81a0f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80');">
+      <div id="home" class="container-fluid jumbotron" style="background-image:url('https://images.unsplash.com/photo-1573641287741-f6e223d81a0f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80');">
         <div class="row justify-content-center">
               <h1 class=>My Awesome App!</h1>
         </div>
@@ -63,30 +62,31 @@
           </form>
         </div>
       </div>
-      <div id="about" class='container-fluid'>
+      <div id="about" class="container-fluid">
         <div class="row justify-content-center">
           <h2>Why This App Is Awesome</h2>
         </div>
         <div class="row justify-content-center">
           <h5>Summary, once again, of your app's awesomeness</h5>
         </div>
-        <div class="row justify-content-center" id="cardRow">
-          <div class="card" style="width: 18rem;height: 22rem;">
+        <div class="row justify-content-center card-deck" id="cardRow">
+          <div class="card">
             <img src="https://images.unsplash.com/photo-1549554865-37e01f877035?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="card image">
             <div class="card-body">
-              <i class="fas fa-anchor"></i>
-              <h5 class="card-title">Card title</h5>
+              <h5 class="card-title">
+                <i class="fas fa-anchor"></i>Card title
+              </h5>
               <p class="card-text" style="font-size: small;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             </div>
           </div>
-          <div class="card" style="width: 18rem;height: 22rem;">
+          <div class="card">
             <img src="https://images.unsplash.com/photo-1549554865-37e01f877035?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="card image">
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
               <p class="card-text" style="font-size: small;">Some quick example text to build on the card title and make up the bulk of the card's content.  I want to add more text to this card to see the text box area</p>
             </div>
           </div>
-          <div class="card" style="width: 18rem;height: 22rem">
+          <div class="card">
             <img src="https://images.unsplash.com/photo-1549554865-37e01f877035?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="card image">
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
@@ -95,7 +95,17 @@
           </div>
         </div>
       </div>
-    <!-- </div> -->
+      <div id="download" class="container-fluid bg-info jumbotron">
+          <div class="row justify-content-center">
+            <h3>Download the App!</h3>
+          </div>
+          <div class="row justify-content-center">
+            <h4>Really, why should I download this app??</h4>
+          </div>
+          <div class="row justify-content-center">
+            <img src="app-store.png">
+          </div>
+      </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
